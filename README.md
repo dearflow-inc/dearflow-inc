@@ -28,7 +28,7 @@ Visit our website at [www.dearflow.ai](http://www.dearflow.ai) to learn more abo
 We're always looking for talented individuals to join our team. Check out our [Careers page](http://www.dearflow.ai/careers) for current openings.
 
 ## Contact
-
+- Email: henry@dearflow.ai
 - Website: [Dearflow](https://www.dearflow.ai)
 - LinkedIn: [Dearflow](https://www.linkedin.com/company/dearflow)
 
