@@ -6,7 +6,8 @@ services:
     container_name: dearflow-document-db
     ports:
       - "0.0.0.0:27017:27017"
-    network_mode: "bridge"
+    networks:
+      - app-network
     volumes:
       - ./api/mongo_data:/data/db
   frontend:
@@ -15,7 +16,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "0.0.0.0:3000:3000"
-    network_mode: "bridge"
+    networks:
+      - app-network
     volumes:
       - ./app:/app
       - /app/node_modules
@@ -28,11 +30,16 @@ services:
       dockerfile: Dockerfile
     ports:
       - "0.0.0.0:4000:4000"
-    network_mode: "bridge"
+    networks:
+      - app-network
     volumes:
       - ./api:/app
       - /app/node_modules
       - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
     environment:
       - NODE_ENV=development
-      - MONGO_DB_CONNECTOR=mongodb://dearflowAdmin:dearflowAdmin123@localhost:27017/dearflow
+      - MONGO_DB_CONNECTOR=mongodb://dearflowAdmin:dearflowAdmin123@mongodb:27017/dearflow
+
+networks:
+  app-network:
+    driver: bridge
