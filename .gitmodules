@@ -1,0 +1,6 @@
+[submodule "app"]
+	path = app
+	url = https://github.com/dearflow-inc/dearflow-app.git
+[submodule "api"]
+	path = api
+	url = https://github.com/dearflow-inc/dearflow-api.git
